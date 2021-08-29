@@ -9,6 +9,7 @@ default_args = {
     'owner': 'Airflow',
 }
 
+
 def process(p1):
     print(p1)
     return 'done'
