@@ -62,7 +62,7 @@ with DAG(
     # read from xcom tp check the status [key & value] pair
     monitor_spark_app_status = SparkKubernetesSensor(
         task_id="monitor_spark_app_status",
-        namespace="processing",
+        namespace="spark-operator",
         application_name="{{ task_instance.xcom_pull(task_ids='pr_elt_business_spark_operator')['metadata']['name'] }}",
         kubernetes_conn_id="minikube",
     )
