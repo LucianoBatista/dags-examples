@@ -51,7 +51,7 @@ with DAG(
     # yaml definition to trigger process
     pr_elt_business_spark_operator = SparkKubernetesOperator(
         task_id="pr_elt_business_spark_operator",
-        namespace="processing",
+        namespace="spark-operator",
         application_file="dependencies/pr-elt-business.yaml",
         kubernetes_conn_id="minikube",
         do_xcom_push=True,
@@ -68,7 +68,6 @@ with DAG(
     )
 
     # check if folder and file exists
-    # delta zone for data lakehouse
     list_curated_s3_folder = S3ListOperator(
         task_id="list_curated_s3_folder",
         bucket=CURATED_ZONE,
