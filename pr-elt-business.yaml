@@ -6,7 +6,7 @@ metadata:
 spec:
   type: Python
   mode: cluster
-  image: "lucianobatista/luba-elt-example:1.0.0"
+  image: ""lucianobatista/luba-elt-example-2:2.0.0""
   imagePullPolicy: Always
   mainApplicationFile: "local:///app/pr-elt-business.py"
   sparkVersion: "3.0.0"
