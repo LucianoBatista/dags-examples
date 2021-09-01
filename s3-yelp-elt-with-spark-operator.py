@@ -51,7 +51,7 @@ with DAG(
     # yaml definition to trigger process
     pr_elt_business_spark_operator = SparkKubernetesOperator(
         task_id="pr_elt_business_spark_operator",
-        namespace="spark-operator",
+        namespace="airflow",
         application_file="pr-elt-business.yaml",
         kubernetes_conn_id="kubernetes_default",
         do_xcom_push=True,
