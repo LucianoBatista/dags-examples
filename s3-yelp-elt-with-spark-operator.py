@@ -52,7 +52,7 @@ with DAG(
     pr_elt_business_spark_operator = SparkKubernetesOperator(
         task_id="pr_elt_business_spark_operator",
         namespace="spark-operator",
-        application_file="pr-elt-business.yaml",
+        application_file="pr-elt-business.json",
         kubernetes_conn_id="minikube",
         do_xcom_push=True,
     )
