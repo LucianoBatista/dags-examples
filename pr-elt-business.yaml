@@ -17,7 +17,7 @@ spec:
     onSubmissionFailureRetries: 5
     onSubmissionFailureRetryInterval: 20
   hadoopConf:
-    fs.s3a.endpoint: "http://127.0.0.1:9000"
+    fs.s3a.endpoint: "http://10.244.3.3:9000"
   driver:
     cores: 1
     coreLimit: "1200m"
