@@ -15,7 +15,7 @@ from airflow.providers.cncf.kubernetes.sensors.spark_kubernetes import (
 )
 
 PROCESSING_ZONE = getenv("PROCESSING_ZONE", "processing")
-CURATED_ZONE = getenv("CURATED_ZONE", "curated")
+CURATED_ZONE = getenv("CURATED_ZONE", "delta")
 
 default_args = {
     "owner": "Luba",
@@ -38,7 +38,7 @@ with DAG(
     # connecting to minio to check (sensor)
     verify_file_existence_processing = S3KeySensor(
         task_id="verify_file_existence_processing",
-        bucket_name=PROCESSING_ZONE,
+        bucket_name="processing",
         bucket_key="pr-elt-business/*.json",
         wildcard_match=True,
         timeout=18 * 60 * 60,
