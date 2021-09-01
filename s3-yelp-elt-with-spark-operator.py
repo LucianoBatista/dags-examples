@@ -53,7 +53,7 @@ with DAG(
         task_id="pr_elt_business_spark_operator",
         namespace="spark-operator",
         application_file="pr-elt-business.yaml",
-        kubernetes_conn_id="minikube",
+        kubernetes_conn_id="kubernetes_default",
         do_xcom_push=True,
     )
 
@@ -64,7 +64,7 @@ with DAG(
         task_id="monitor_spark_app_status",
         namespace="spark-operator",
         application_name="{{ task_instance.xcom_pull(task_ids='pr_elt_business_spark_operator')['metadata']['name'] }}",
-        kubernetes_conn_id="minikube",
+        kubernetes_conn_id="kubernetes_default",
     )
 
     # check if folder and file exists
